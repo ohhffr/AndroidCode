@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.EnglishGPTApplication" parent="Theme.Material3.DayNight.NoActionBar">
+
+    </style>
+
+    <style name="Theme.EnglishGPTApplication" parent="Base.Theme.EnglishGPTApplication" />
+    
+
+
+
+</resources>

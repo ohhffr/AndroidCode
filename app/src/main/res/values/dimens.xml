@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_corner_radius01">40dp</dimen>
+    <dimen name="status_bar_height">24dp</dimen>
+    <dimen name="dimen_max_pull_offset">200dp</dimen>
+</resources>

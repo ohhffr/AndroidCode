@@ -1,0 +1,138 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.englishgptapplication.ui.viewmodel.ArticleViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.LibraryFragment">
+
+        <!-- AppBarLayout 包含 Toolbar -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/color_F8FFFE"
+                app:titleTextAppearance="@style/ToolbarTitle"
+                app:title="文库"
+                app:titleCentered="true"
+                app:titleMarginTop="35dp"
+                app:titleTextColor="@color/color_605C65" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+        
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <!-- 左侧分类列表 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTypes"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:background="@color/color_F0F0F5"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <!-- 右侧内容区域 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintStart_toEndOf="@id/rvTypes"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:paddingTop="10dp"
+                        android:text="难度值:"
+                        android:textSize="14sp"/>
+                    <!-- 难度值选择 -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvLexiles"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="9"
+                        android:paddingTop="4dp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                </LinearLayout>
+                <!-- 新增空数据提示 -->
+                <TextView
+                    android:id="@+id/tvEmptyHint"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="当前难度下没有该类文章，请选择其他难度值"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/color_AAA8A8"
+                    android:visibility="gone"/>
+
+                <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                    android:id="@+id/swipeRefresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srlEnableRefresh="true">
+                    <com.scwang.smart.refresh.header.ClassicsHeader
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srlDrawableProgressSize="40dp"
+                        app:srlDrawableSize="40dp"
+                        app:srlEnableLastTime="false"
+                        app:srlDrawableProgress="@drawable/ic_swipe"
+                        app:srlDrawableArrow="@drawable/ic_swipe"
+                        app:srlTextPulling="下拉刷新"
+                        app:srlTextRelease="释放立即刷新"
+                        app:srlTextRefreshing="正在刷新..."
+                        app:srlTextFinish="刷新完成" />
+                    <!-- 文章列表 -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvArticles"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                    <com.scwang.smart.refresh.footer.ClassicsFooter
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srlDrawableProgressSize="50dp"
+                        app:srlDrawableSize="50dp"
+                        app:srlEnableLastTime="false"
+                        app:srlDrawableProgress="@drawable/ic_loading_more"
+                        app:srlTextPulling="上拉加载更多"
+                        app:srlTextRelease="释放立即加载"
+                        app:srlTextLoading="正在加载..."
+                        app:srlTextFinish="加载完成"
+                        app:srlTextFailed="加载失败"
+                        app:srlTextNothing="敬请期待"/>
+                </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

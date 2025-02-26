@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="lexile"
+            type="Integer"/>
+    </data>
+
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chipLexile"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:backgroundTint="@color/white"
+        android:textAlignment="center"
+        android:text="@{String.valueOf(lexile)}"
+        android:checkable="true"
+        style="@style/CustomChipStyle"/>
+</layout>

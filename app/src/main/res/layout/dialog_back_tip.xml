@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/warm_tip_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="温馨提示"
+        android:textColor="@color/color_00BFFF"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/warm_tip_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="还没有完成该环节，确认要离开吗？"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/warm_tip_title"
+        android:layout_marginTop="15dp"/>
+
+    <Button
+        android:id="@+id/confirm_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确定离开"
+        android:backgroundTint="@color/color_AAA8A8"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/continue_reading"
+        app:layout_constraintTop_toBottomOf="@+id/warm_tip_content"
+        android:layout_marginTop="20sp"/>
+    <Button
+        android:id="@+id/continue_reading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/color_5D73F1"
+        android:text="继续阅读"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/confirm_exit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/warm_tip_content"
+        android:layout_marginTop="20sp" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

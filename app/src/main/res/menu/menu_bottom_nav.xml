@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homepageFragment"
+        android:icon="@drawable/selector_homepage"
+        android:title="首页" />
+
+    <item
+        android:id="@+id/listeningFragment"
+        android:icon="@drawable/selector_listening"
+        android:title="听力" />
+
+    <item
+        android:id="@+id/libraryFragment"
+        android:icon="@drawable/selector_library"
+        android:title="文库" />
+
+    <item
+        android:id="@+id/myFragment"
+        android:icon="@drawable/selector_mine"
+        android:title="我的" />
+</menu>
